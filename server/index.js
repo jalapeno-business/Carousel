@@ -1,27 +1,28 @@
-const express = require('express')
-const app = express()
-const db = require('../database/index.js')
+const express = require('express');
 
+const app = express();
+const db = require('../database/index.js');
 
-//get request 
-app.get('/api/carousel', (req, res) => {
-    db.get((err, data) => {
-        if (err) {
-            console.log("get error from EXPRESS GET")
-        } else {
-            res.send(data)
-        }
-    })
-    
-})
+app.use(express.static(__dirname + '/../client/dist'));
 
-//listening on
-let PORT = process.env.PORT || 8888;
-app.listen(PORT, (error) => {
-    if(error) {
-        console.log(`NOT LISTENING TO PORT ${PORT}`)
+// get request
+app.get('/api/carousel/:id', (req, res) => {
+  const num = req.params.id;
+  db.get(num, (err, data) => {
+    if (err) {
+      console.log('get error from EXPRESS GET');
     } else {
-        console.log(`LISTENING TO PORT ${PORT}`)
+      res.send(data);
     }
-})
+  });
+});
 
+// listening on
+const PORT = process.env.PORT || 8888;
+app.listen(PORT, (error) => {
+  if (error) {
+    console.log(`NOT LISTENING TO PORT ${PORT}`);
+  } else {
+    console.log(`LISTENING TO PORT ${PORT}`);
+  }
+});
