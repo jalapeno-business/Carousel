@@ -1,10 +1,9 @@
-/* global document */
 import React from 'react';
-import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Photos from './components/photos.jsx';
 
-class App extends React.Component {
+
+export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -34,7 +33,6 @@ class App extends React.Component {
     });
   }
 
-
   render() {
     const app = this.state;
 
@@ -52,6 +50,3 @@ class App extends React.Component {
     );
   }
 }
-
-
-ReactDOM.render(<App />, document.getElementById('app'));

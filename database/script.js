@@ -6,11 +6,11 @@
 const createPhotoArray = () => {
   const photoArr = [];
   const randomNum10 = Math.floor(Math.random() * 10 + 1);
-
+  
   for (let i = 0; i < randomNum10; i += 1) {
     photoArr.push(`https://s3-us-west-1.amazonaws.com/food-zagat/images/food-${Math.floor(Math.random() * 59)}.jpg`);
   }
-
+  
   return photoArr;
 };
 
@@ -20,7 +20,7 @@ const createResturant = (num) => {
     id: num,
     photo: createPhotoArray(),
   };
-
+  
   return photoObj;
 };
 
@@ -37,8 +37,8 @@ while (count <= max) {
 
 module.exports.resturants = resturants;
 
-// const db = require('./index');
 
+// const db = require('./index');
 // function to add resturants to db
 // resturants.map((resturant) => db.save(resturant, (err) => {
 //   if (err) {

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/carousel', { useNewUrlParser: true });
+mongoose.connect('mongodb://IvanHui:98458741961a@ds046867.mlab.com:46867/phoodotos', { useNewUrlParser: true });
 
 const photoSchema = mongoose.Schema({
   id: Number,
