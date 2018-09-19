@@ -5,8 +5,8 @@
 }
 
 .image {
-    height: 200px;
-    width: 200px;
+    height: 400px;
+    width: 400px;
     overflow: hidden;
     
 }
@@ -21,6 +21,23 @@
     -moz-transition: all .5s;
     -o-transition: all .5s;
     transition: all .5s;
+}
+
+.gridPhoto {
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+}
+
+.photodoto {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
 }
 
 .bigfood {
@@ -51,14 +68,30 @@
 }
 
 
-/* .food:hover img {
-    -moz-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  } */
 
 .image:hover .food,
 .image:focus .food {
+  transform: scale(1.1);
+}
+
+.gridPhoto:hover .photodoto:before, .gridPhoto:focus .photodoto:before {
+  display: block;
+}
+
+.photodoto:before {
+  content: "";
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(52,73,94,0.75);
+}
+
+
+.gridPhoto:hover .photodoto,
+.gridPhoto:focus .photodoto {
   transform: scale(1.1);
 }
 
@@ -119,10 +152,7 @@
     flex-wrap: wrap;
   }
 
-  .photodoto {
-    height: 200px;
-    width: 200px;
-  }
+
   /* The Close Button */
   .close {
     color: white;

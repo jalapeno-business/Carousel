@@ -18,7 +18,8 @@
     "eslint": "eslint . --fix",
     "react-dev": "webpack -d --watch",
     "test": "jest --coverage",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "webpack": "webpack -p --config ./webpack.config.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.3.1",
