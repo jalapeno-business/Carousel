@@ -23,7 +23,7 @@ export default class Carousel extends React.Component {
       id = '/1';
     }
     $.ajax({
-      url: `http://localhost:8888/api/carousel${id}`,
+      url: `http://localhost:8888/api/restaurant/carousel${id}`,
       method: 'GET',
       success: (data) => {
         that.setState({
@@ -41,7 +41,7 @@ export default class Carousel extends React.Component {
 
     let photoList = '';
     if (app.photos === '') {
-      console.log('nothinghappening');
+      photoList = '';
     } else {
       photoList = <Photos photo={app.photos[0].photo} />;
     }
