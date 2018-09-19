@@ -1,6 +1,9 @@
 /* global document */
 import React from 'react';
 
+import '@fortawesome/fontawesome-free/js/all';
+import '../styles.css';
+
 class Photos extends React.Component {
   constructor(props) {
     super(props);
@@ -12,22 +15,29 @@ class Photos extends React.Component {
     this.showSlides = this.showSlides.bind(this);
     this.plusSlides = this.plusSlides.bind(this);
     this.minusSlides = this.minusSlides.bind(this);
+    this.openModalGrid = this.openModalGrid.bind(this);
   }
 
   openModal(n) {
+    this.closeModal();
     document.getElementById('myModal').style.display = 'block';
     //   var slides = document.getElementsByClassName("mySlides");
     //   slides[1].style.display= "block";
     this.setState({
       currentSlide: n,
     }, () => {
-      const destruc = this.state;
-      this.showSlides(destruc.currentSlide);
+      this.showSlides();
     });
+  }
+  
+  openModalGrid() {
+    this.closeModal();
+    document.getElementById('myModalGrid').style.display = 'block';
   }
 
   closeModal() {
     document.getElementById('myModal').style.display = 'none';
+    document.getElementById('myModalGrid').style.display = 'none';
   }
 
   minusSlides() {
@@ -36,13 +46,13 @@ class Photos extends React.Component {
       this.setState({
         currentSlide: document.getElementsByClassName('mySlides').length,
       }, () => {
-        this.showSlides(destruc.currentSlide);
+        this.showSlides();
       });
     } else {
       this.setState({
         currentSlide: destruc.currentSlide - 1,
       }, () => {
-        this.showSlides(destruc.currentSlide);
+        this.showSlides();
       });
     }
   }
@@ -53,18 +63,18 @@ class Photos extends React.Component {
       this.setState({
         currentSlide: 1,
       }, () => {
-        this.showSlides(destruc.currentSlide);
+        this.showSlides();
       });
     } else {
       this.setState({
         currentSlide: destruc.currentSlide + 1,
       }, () => {
-        this.showSlides(destruc.currentSlide);
+        this.showSlides();
       });
     }
   }
 
-  showSlides(n) {
+  showSlides() {
     const slideIndex = this.state.currentSlide;
     const slides = document.getElementsByClassName('mySlides');
     for (let i = 0; i < slides.length; i += 1) {
@@ -87,7 +97,7 @@ class Photos extends React.Component {
           ))}
         </div>
         <div id="myModal" className="modal">
-          <span className="gridIcon"><i className="fa fa-th"></i></span>
+          <span className="gridIcon" onClick={this.openModalGrid}><i className="fas fa-th"></i></span>
           <span className="close cursor" onClick={this.closeModal}>&times;</span>
           <div className="modal-content">
             {destruc.photo.map(photo => (
@@ -102,7 +112,11 @@ class Photos extends React.Component {
         <div id="myModalGrid" className="modal">
           <span className="close cursor" onClick={this.closeModal}>&times;</span>
           <div className="modal-grid">
-    
+            {destruc.photo.map((photo, index) => (
+              <div className="gridPhoto">
+                <img className="photodoto" src={photo} onClick={() => {this.openModal(index+1)}} />
+              </div>
+            ))}
           </div>
         </div>
       </div>

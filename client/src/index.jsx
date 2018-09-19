@@ -3,7 +3,7 @@ import $ from 'jquery';
 import Photos from './components/photos.jsx';
 
 
-export default class App extends React.Component {
+export default class Carousel extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -18,9 +18,12 @@ export default class App extends React.Component {
 
   getPhoto() {
     const that = this;
-    const num = 3;
+    let id = window.location.pathname;
+    if (id === '/') {
+      id = '/1';
+    }
     $.ajax({
-      url: `http://localhost:8888/api/carousel/${num}`,
+      url: `http://localhost:8888/api/carousel${id}`,
       method: 'GET',
       success: (data) => {
         that.setState({
