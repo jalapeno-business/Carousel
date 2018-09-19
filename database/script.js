@@ -37,8 +37,8 @@ while (count <= max) {
 
 module.exports.resturants = resturants;
 
-// const db = require('./index');
 
+// const db = require('./index');
 // function to add resturants to db
 // resturants.map((resturant) => db.save(resturant, (err) => {
 //   if (err) {
