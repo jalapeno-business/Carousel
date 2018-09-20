@@ -90,7 +90,7 @@ class Photos extends React.Component {
     } return (
       <div>
         <div className="foodrow">
-          {destruc.photo.slice(0, 5).map((photo, index) => (
+          {destruc.photo.slice(0, 4).map((photo, index) => (
             <div className="image">
               <img className="food" src={photo} onClick={() => {this.openModal(index+1)}} width="300" />
             </div>
