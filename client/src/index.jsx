@@ -23,7 +23,7 @@ export default class Carousel extends React.Component {
       id = '/1';
     }
     $.ajax({
-      url: `http://localhost:8888/api/restaurant/carousel${id}`,
+      url: `/api/restaurant/carousel${id}`,
       method: 'GET',
       success: (data) => {
         that.setState({

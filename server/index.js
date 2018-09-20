@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 
 // get request
-app.get('/api/resturant/carousel/:id', (req, res) => {
+app.get('/api/restaurant/carousel/:id', (req, res) => {
   const num = req.params.id;
   db.get(num, (err, data) => {
     if (err) {
