@@ -1,6 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
-import Photos from './components/photos.jsx';
+import Photos from './components/photos';
 
 
 export default class Carousel extends React.Component {

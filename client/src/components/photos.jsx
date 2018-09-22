@@ -29,7 +29,7 @@ class Photos extends React.Component {
       this.showSlides();
     });
   }
-  
+
   openModalGrid() {
     this.closeModal();
     document.getElementById('myModalGrid').style.display = 'block';
@@ -38,6 +38,11 @@ class Photos extends React.Component {
   closeModal() {
     document.getElementById('myModal').style.display = 'none';
     document.getElementById('myModalGrid').style.display = 'none';
+
+    // not necissary but added due to eslint error
+    this.setState({
+      currentSlide: 1,
+    });
   }
 
   minusSlides() {
@@ -75,7 +80,8 @@ class Photos extends React.Component {
   }
 
   showSlides() {
-    const slideIndex = this.state.currentSlide;
+    const destruc = this.state;
+    const slideIndex = destruc.currentSlide;
     const slides = document.getElementsByClassName('mySlides');
     for (let i = 0; i < slides.length; i += 1) {
       slides[i].style.display = 'none';
@@ -92,9 +98,12 @@ class Photos extends React.Component {
         <div className="foodrow">
           {destruc.photo.slice(0, 4).map((photo, index) => (
             <div className="image">
-              <img className="food" src={photo} onClick={() => {this.openModal(index+1)}} width="300" />
+              <img className="food" src={photo} onClick={() => {this.openModal(index+1)}} width="300" alt="" />
             </div>
           ))}
+          <a className="zgt-show-gallery-lightbox" onClick={this.openModalGrid}>
+            {`${destruc.photo.length} photos +`}
+          </a>
         </div>
         <div id="myModal" className="modal">
           <span className="gridIcon" onClick={this.openModalGrid}><i className="fas fa-th"></i></span>
