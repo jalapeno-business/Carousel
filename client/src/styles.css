@@ -2,20 +2,21 @@
     display: flex;
     justify-content: center;
     background-color: white;
+    position: relative;
 
 }
 
 .image {
-    height: 400px;
-    width: 400px;
+    height: auto;
+    width: auto;
     overflow: hidden;
-    
 }
 
 
 .food {
     height: 100%;
     width: 100%;
+    padding: 5px;
     background-size: cover;
     background-repeat: no-repeat;
     -webkit-transition: all .5s;
@@ -25,8 +26,9 @@
 }
 
 .gridPhoto {
-  height: 200px;
-  width: 200px;
+  padding: 5px;
+  height: 250px;
+  width: 250px;
   overflow: hidden;
 }
 
@@ -44,7 +46,6 @@
 .bigfood {
   height: 100%;
   width: 100%;
-  background-size: cover;
   background-repeat: no-repeat;
   -webkit-transition: all .5s;
   -moz-transition: all .5s;
@@ -69,10 +70,9 @@
 }
 
 
-
 .image:hover .food,
 .image:focus .food {
-  transform: scale(1.1);
+  transform: scale(1.01);
 }
 
 .gridPhoto:hover .photodoto:before, .gridPhoto:focus .photodoto:before {
@@ -93,7 +93,7 @@
 
 .gridPhoto:hover .photodoto,
 .gridPhoto:focus .photodoto {
-  transform: scale(1.1);
+  transform: scale(1.01);
 }
 
 
@@ -146,8 +146,8 @@
     margin: auto;
     padding: 0;
     width: 90%;
-    max-width: 600px;
-    max-height: 600px;
+    max-width: 80%;
+    max-height: 80%;
     object-fit: contain;
     display: flex;
     flex-wrap: wrap;
@@ -191,11 +191,25 @@
   .mySlides {
     display: none;
     width: 100%;
-    height: 400px;
+    height: 80%;
     background-repeat: no-repeat;
     background-size: contain;
+}
 
-  }
+
+  .zgt-show-gallery-lightbox {
+    background-color: rgba(16,24,32,.75);
+    height: 31px;
+    padding-top:10px;
+    padding-right: 10px;
+    padding-left: 16px;
+    right: 40px;
+    top: 45%;
+    color: white;
+    position: absolute;
+
+}
+
   
   /* Next & previous buttons */
   .prev,

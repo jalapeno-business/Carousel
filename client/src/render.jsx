@@ -2,8 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Carousel from './index.jsx';
+import Carousel from './index';
 
 
-ReactDOM.render(<Carousel />, document.getElementById('Carousel'));
-// window.Carousel = Carousel;
+ReactDOM.render(<Carousel />, document.getElementById('zagat-carousel'));
