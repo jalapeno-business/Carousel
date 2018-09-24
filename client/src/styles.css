@@ -3,6 +3,7 @@
     justify-content: center;
     background-color: white;
     position: relative;
+    height:265px;
 
 }
 
@@ -13,8 +14,8 @@
 }
 
 .food {
-    height: 100%;
-    width: 100%;
+    height: -webkit-fill-available;
+    width: auto;
     padding: 5px;
     background-size: cover;
     background-repeat: no-repeat;

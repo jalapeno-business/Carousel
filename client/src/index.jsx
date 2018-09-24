@@ -20,7 +20,7 @@ export default class Carousel extends React.Component {
     const that = this;
     let id = window.location.pathname;
     if (id === '/') {
-      id = '/1';
+      id = '/5';
     }
     $.ajax({
       url: `/api/restaurant/carousel${id}`,
