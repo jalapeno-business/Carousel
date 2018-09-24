@@ -24,5 +24,5 @@ module.exports = (grunt) => {
   });
   grunt.registerTask('build', ['run:webpack']);
   grunt.registerTask('deploy', ['run:s3']);
-  grunt.registerTask('build-deploy', ['run:webpack', 'run:s3ReviewsGzip']);
+  grunt.registerTask('build-deploy', ['run:webpack', 'run:s3CarouselGzip']);
 };
