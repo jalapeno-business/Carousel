@@ -9,7 +9,7 @@ module.exports = (grunt) => {
           'webpack-prod',
         ],
       },
-      s3ReviewsGzip: {
+      s3CarouselGzip: {
         cmd: 'aws',
         args: [
           's3',
