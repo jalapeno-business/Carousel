@@ -24,9 +24,10 @@
     transition: all .5s;
 }
 
-.food:first-child {
-  padding-left: 0;
-}
+
+/* .food:first-child {
+  padding-left: 0px;
+} */
 
 .gridPhoto {
   padding: 5px;
@@ -197,6 +198,7 @@
     height: 80%;
     background-repeat: no-repeat;
     background-size: contain;
+    background-color: black;
 }
 
 
