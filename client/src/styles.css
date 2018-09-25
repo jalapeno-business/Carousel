@@ -12,9 +12,11 @@
     overflow: hidden;
 }
 
+
 .image:first-child {
   padding-left: 0px;
 }
+
 
 .food {
     height: 100%;
@@ -30,6 +32,7 @@
 /* .food:first-child {
   padding-left: 0px;
 } */
+
 
 .gridPhoto {
   padding: 5px;
