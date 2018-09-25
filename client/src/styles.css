@@ -8,12 +8,16 @@
 .image {
     height: auto;
     width: auto;
+    padding: 5px;
     overflow: hidden;
+}
+
+.image:first-child {
+  padding-left: 0px;
 }
 
 .food {
     height: 100%;
-    padding: 5px;
     background-size: cover;
     background-repeat: no-repeat;
     -webkit-transition: all .5s;
